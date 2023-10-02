@@ -72,6 +72,7 @@ class TodoControllerTest {
 
     private String doRequest(Request request) {
         try (Response response = client.newCall(request).execute()) {
+            System.out.println(response);
             return Objects.requireNonNull(response.body()).string();
         } catch (IOException e) {
             throw new RuntimeException(e);
