@@ -1,0 +1,70 @@
+.container {
+  max-width: 900px;
+  height: 100vh;
+  margin: auto;
+  background-color: #f3f4f6;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.table-card, .form-card {
+  background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+  box-shadow: 0px 5px 20px rgba(0,0,0,0.2);
+  border-radius: 15px;
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+.styled-table {
+  width: 100%;
+}
+
+.styled-table mat-header-cell, .styled-table mat-cell {
+  padding: 16px;
+  text-align: left;
+  font-weight: bold;
+}
+
+.action-buttons {
+  text-align: center;
+}
+
+.action-buttons button {
+  margin: 10px;
+  background: linear-gradient(90deg, #3498db, #8e44ad);
+  color: white;
+  border: none;
+  transition: all 0.5s;
+}
+
+.action-buttons button:hover {
+  transform: scale(1.05);
+}
+
+mat-form-field {
+  width: 45%;
+  &:first-child {
+    margin-right: 10%;
+  }
+}
+
+button.mat-raised-button {
+  border-radius: 25px;
+  padding: 10px 25px;
+  background: linear-gradient(90deg, #3498db, #8e44ad);
+  color: white;
+  transition: all 0.5s;
+}
+
+button.mat-raised-button:hover {
+  background: linear-gradient(90deg, #8e44ad, #3498db);
+  transform: scale(1.05);
+}
+
+.delete-button {
+  background-color: #e74c3c;
+}
+
+.delete-button:hover {
+  background-color: #c0392b;
+}

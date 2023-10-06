@@ -1,0 +1,49 @@
+<div class="container">
+  <mat-card class="table-card">
+    <mat-table [dataSource]="todos">
+      <!-- Columns -->
+      <ng-container matColumnDef="description">
+        <mat-header-cell *matHeaderCellDef> Description </mat-header-cell>
+        <mat-cell *matCellDef="let todo"> {{todo.description}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="summary">
+        <mat-header-cell *matHeaderCellDef> Summary </mat-header-cell>
+        <mat-cell *matCellDef="let todo"> {{todo.summary}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
+        <mat-cell *matCellDef="let todo">
+          <button mat-button (click)="deleteTodo(todo.id)" class="delete-button">Delete</button>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="['description', 'summary', 'actions']"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: ['description', 'summary', 'actions'];"></mat-row>
+    </mat-table>
+  </mat-card>
+
+<mat-card *ngIf="addView" class="form-card">
+  <mat-card-content>
+    <form (submit)="addTodo()">
+      <mat-form-field>
+        <mat-label>Description</mat-label>
+        <input matInput [(ngModel)]="description" name="description">
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Summary</mat-label>
+        <input matInput [(ngModel)]="summary" name="summary">
+      </mat-form-field>
+
+      <button mat-raised-button type="submit">Add Todo</button>
+    </form>
+  </mat-card-content>
+</mat-card>
+
+  <div class="action-buttons">
+    <button mat-raised-button color="primary" (click)="loadTodos()">Refresh</button>
+    <button mat-raised-button color="accent" (click)="toggleAdd()" *ngIf="!addView">Add</button>
+  </div>
+</div>

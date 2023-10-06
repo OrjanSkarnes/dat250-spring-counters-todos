@@ -1,8 +1,11 @@
 package no.hvl.dat250.rest.todos;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
 import java.util.Objects;
 
 public class Todo {
+
     private Long id;
     private String summary;
     private String description;
